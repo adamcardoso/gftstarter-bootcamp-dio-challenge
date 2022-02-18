@@ -3,9 +3,7 @@ package com.challenge.userdeptarment.controllers;
 import com.challenge.userdeptarment.entities.User;
 import com.challenge.userdeptarment.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,10 +12,20 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository repository;
 
     @GetMapping
-    public List<User> findAll(){
-        return  userRepository.findAll();
+    public List<User> findAll() {
+        return repository.findAll();
+    }
+
+    @GetMapping(value = "/{id}")
+    public User findAll(@PathVariable Long id) {
+        return repository.findById(id).get();
+    }
+
+    @PostMapping
+    public User insert(@RequestBody User user) {
+        return repository.save(user);
     }
 }

@@ -19,5 +19,5 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "department_id") //db foreign key
-    private Departament departament; // association
+    private Department departament; // association
 }
