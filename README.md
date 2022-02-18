@@ -7,3 +7,9 @@ http://localhost:8080/h2-console
 <br>
 <br>
 I'm also using Postman to test "PUT" and "GET" methods.
+<br>
+<br>
+<br>
+If you have any doubt about Postman and H2 Database or how to test the code, you can acces the link below and watch the video:
+<br>
+https://youtu.be/1Sft4vH5a68
