@@ -1,5 +1,6 @@
 package com.challenge.userdeptarment.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,8 +8,9 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
 @Table(name = "tb_department")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Department {
 
     @Id
