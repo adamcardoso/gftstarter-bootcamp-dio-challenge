@@ -1,45 +1,23 @@
 package com.challenge.userdeptarment.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@NoArgsConstructor
+@Table(name = "tb_user")
 public class User {
-    private Long id;
-    private String userName;
-    private String email;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter private Long id;
+    @Getter @Setter private String userName;
+    @Getter @Setter private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id") //db foreign key
     private Departament departament; // association
-
-    public User(){
-
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Departament getDepartament() {
-        return departament;
-    }
-
-    public void setDepartament(Departament departament) {
-        this.departament = departament;
-    }
 }
