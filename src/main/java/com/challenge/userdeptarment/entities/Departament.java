@@ -13,6 +13,6 @@ public class Departament {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter private Long id;
-    @Getter @Setter private String departmentName;
+    @Getter private Long id; // id doesn't need a set method
+    @Getter @Setter private String name;
 }
